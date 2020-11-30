@@ -1,0 +1,85 @@
+{
+  "name": "third",
+  "version": "0.1.0",
+  "private": true,
+  "main": "app/main.js",
+  "author": "erriy <erriy@msn.com>",
+  "build": {
+    "appId": "third",
+    "productName": "third",
+    "artifactName": "${productName}-${version}_${os}_${arch}.${ext}",
+    "linux": {
+      "target": [
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "target": {
+        "arch": [
+          "x64"
+        ],
+        "target": "dmg"
+      }
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "runAfterFinish": true
+    },
+    "files": [
+      "dist/css",
+      "dist/fonts",
+      "dist/img",
+      "dist/js",
+      "dist/index.html",
+      "dist/favicon.ico",
+      "app"
+    ]
+  },
+  "scripts": {
+    "dv": "vue-cli-service serve",
+    "bv": "vue-cli-service build",
+    "de": "cross-env DEBUG=true electron .",
+    "be": "electron-builder",
+    "build": "vue-cli-service build && electron-builder"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.7.2",
+    "axios": "^0.21.1",
+    "command-exists": "^1.2.9",
+    "core-js": "^3.6.5",
+    "diff": "^5.0.0",
+    "electron-log": "^4.3.0",
+    "electron-store": "^6.0.1",
+    "element-ui": "^2.14.1",
+    "gpg": "^0.6.0",
+    "monaco-editor": "^0.21.2",
+    "multicast-dns": "^7.2.2",
+    "open": "^7.3.0",
+    "openpgp": "^4.10.8",
+    "random-string": "^0.2.0",
+    "vditor": "^3.7.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.9",
+    "vue-scroll-loader": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.0.3",
+    "electron-builder": "^22.9.1",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "monaco-editor-webpack-plugin": "^2.1.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+
+}
